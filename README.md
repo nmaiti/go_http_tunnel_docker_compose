@@ -1,3 +1,4 @@
+[![Docker Image CI](https://github.com/nmaiti/go_http_tunnel_docker_compose/actions/workflows/main.yml/badge.svg)](https://github.com/nmaiti/go_http_tunnel_docker_compose/actions/workflows/main.yml)
 
 This docker build and docker-compose of go-http-tunnel reverese proxy.
 Using it we can tunnel any local service like http server, https server or forwad local ssh service accessible from anywhere from internet. 
