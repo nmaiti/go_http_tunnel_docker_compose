@@ -1,0 +1,21 @@
+server_addr: YOUR_CLOUD_SERVER_IP:4343
+tls_crt: /certs/client.crt
+tls_key: /certs/client.key
+  #root_ca: /certs/ca.crt
+backoff:
+  interval: 800ms
+  multiplier: 1.5
+  max_interval: 15m0s
+  max_time: 300m0s
+
+tunnels:
+  webui:
+    proto: http
+    addr: 127.0.0.1:8088
+    auth: username:password
+    host: subdomain.yourdomain.com
+  ssh:
+    proto: tcp
+    addr: localhost:22
+    remote_addr: 0.0.0.0:1025
+

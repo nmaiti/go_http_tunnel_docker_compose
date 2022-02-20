@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  reverse-proxy:
+    image: nbmaiti/go-tunnel:latest
+    container_name: tunnel-server
+    restart: always
+    ports:
+      - "4343:4343"
+      - "3080:80"
+      - "443:443"
+      - "22:1025"
+      - "3000:3000"
+    volumes:
+      - ${GO_TUNNEL_CERTS_DIR:-./certs}:/certs:ro
+      - ${GO_TUNNEL_CONF_DIR:-./config}/check_clients.sh:/app/check_clients.sh
+      - ${GO_TUNNEL_CONF_DIR:-./config}/ValidClients.txt:/app/ValidClients.txt:rw
+    entrypoint: ["/app/tunneld", "-tunnelAddr", ":443", "-tlsCrt", "/certs/server.crt", "-tlsKey", "/certs/server.key", "-sniAddr", ":3000" ]
+

@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  reverse-proxy:
+    image: nbmaiti/go-tunnel
+    container_name: tunnel-client
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ${GO_TUNNEL_CERTS_DIR:-./certs}:/certs:ro
+      - ${GO_TUNNEL_CONF_DIR:-./config}:/conf
+    entrypoint: ["/app/tunnel", "-config", "/conf/tunnels.yml", "start-all"]
+
