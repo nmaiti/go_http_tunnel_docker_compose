@@ -12,7 +12,7 @@ Origin : mmatczuk/go-http-tunnel server
 # Generate Server CA, server, clients certificates
 - Generate your certificates 
 ```
-     $ enerateCertificates.sh YOUR-CA-NAME hostname-of-your-tunnel-server,clientname1,clientname2 
+     $ ./generateCertificates.sh YOUR-CA-NAME hostname-of-your-tunnel-server,clientname1,clientname2 
 ```
     - You can always come back and generate additional client certificates..
 
