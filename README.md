@@ -40,6 +40,8 @@ Origin : mmatczuk/go-http-tunnel server
 
 
 ## NOTE 
+Use/modify in `config/check_clients.sh` to provide check if the clinent(certificate id) to be checked from file or database.
+
 Use following ports for access or redirect through proxy (caddy/nginx etc)
 - '80 and 443' are default http and https ports respectively
 - Default tunneld server port address is 4343
