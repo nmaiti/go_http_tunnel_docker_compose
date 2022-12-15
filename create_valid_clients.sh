@@ -14,4 +14,4 @@
 # Email : nbmaiti83@gmail.com
 ###################################################################
 
-docker run -v ${PWD}/docker-compose_client_run/certs:/certs -v /home/nabendu/PLAYGROUND/WIP/go_http_tunnel_docker/docker-compose_client_run/config:/config nbmaiti/go-tunnel /usr/bin/tunnel -config /config/tunnels.yml id >> ./docker-compose_server_run/config/ValidClients.txt
+docker run -v ${PWD}/docker-compose_client_run/certs:/certs -v ${PWD}/docker-compose_client_run/config:/config nbmaiti/go-tunnel /usr/bin/tunnel -config /config/tunnels.yml id >> ./docker-compose_server_run/config/ValidClients.txt
