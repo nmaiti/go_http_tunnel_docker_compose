@@ -1,4 +1,5 @@
 #!/bin/bash
+shopt -s expand_aliases
 set -euo pipefail
 IFS=$'\n\t'
 
@@ -16,10 +17,10 @@ fi
 
 # Some certstrap options
 DEPOT_PATH=certificates
-EXPIRES="10 years"
+EXPIRES="5 years"
 KEY_BITS=4096
 
-alias certstrap='docker run -v $PWD/DEPOT_PATH:/DEPOT_PATH -it  nbmaiti/certstrap'
+alias certstrap='docker run -v "${PWD}/$DEPOT_PATH:/$DEPOT_PATH" -it  nbmaiti/certstrap
 
 certstrap_with_opts () {
   certstrap --depot-path "${DEPOT_PATH}" "$@"
