@@ -39,7 +39,7 @@ generateCA () {
 requestAndSignCertificate () {
   local SERVICE=$1
   echo "Create certificate request for ${SERVICE}"
-  certstrap_with_opts request-cert --passphrase "" --key "${DEPOT_PATH}/${CA_NAME}.key" --key-bits "${KEY_BITS}" --common-name "${SERVICE}"
+  certstrap_with_opts request-cert --passphrase "" --key "${DEPOT_PATH}/${SERVICE}.key" --key-bits "${KEY_BITS}" --common-name "${SERVICE}"
   echo "Sign certificate request for ${SERVICE}"
   certstrap_with_opts sign --passphrase "" --expires "${EXPIRES}" --CA "${CA_NAME}" "${SERVICE}"
 }
